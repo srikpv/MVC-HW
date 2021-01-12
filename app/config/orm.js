@@ -8,19 +8,7 @@ const util = require( 'util' );
 class ORM {
 
     static get_connection = _ => {
-        return mysql.createConnection({
-            host: process.env.HOST,
-          
-            // Your port; if not 3306
-            port: process.env.DB_PORT,
-          
-            // Your username
-            user: process.env.USER_NAME,
-          
-            // Your password
-            password: process.env.PASS_WORD,
-            database: process.env.DATABASE
-          });
+        return mysql.createConnection(process.env.JAWSDB_URL);
     }
 
     static makeDb = _ => {
